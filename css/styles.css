@@ -1,3 +1,7 @@
 .hidden {
   display: none;
 }
+
+p {
+  margin-left: 3px;
+}

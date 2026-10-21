@@ -14,6 +14,7 @@
   </div>
 
   <form id="items">
+    <p id="item-error" class="hidden">Please select item.</p>
     <div class="row">
       <div class="col-sm-12">
         <label for="necklace">Necklace: 120.99</label>
@@ -32,26 +33,27 @@
   </form>
 
   <form id="shipping" class="hidden">
+    <p id="shipping-error" class="hidden">Please fill out shipping information.</p>
     <div class="form-row">
-      <div class="form-control col-md-10">
-        <label for="name">Enter Name</label>
-        <input type="text" name="name" id="name" class="form-control">
+      <div class="form-control col-md-6">
+        <label for="fname">Enter Name</label>
+        <input type="text" name="fname" id="fname">
       </div>
-      <div class="form-group col-md-10">
-        <label for="address">Enter Address</label>
-        <input type="text" id="address" name="address" class="form-control">
+      <div class="form-control col-md-6">
+        <label for="caddress">Enter Address</label>
+        <input type="text" id="caddress" name="caddress">
       </div>
-      <div class="form-group col-md-10">
-        <label for="email">Enter Email</label>
-        <input type="email" class="form-control" id="email" name="email">
+      <div class="form-control col-md-6">
+        <label for="cemail">Enter Email</label>
+        <input type="email" id="cemail" name="cemail">
       </div>
-      <div class="form-control col-md-10">
+      <div class="form-control col-md-6">
         <label for="city">Enter City</label>
-        <input type="text" class="form-control" id="city" name="city">
+        <input type="text" id="city" name="city">
       </div>
-      <div class="form-control col-md-10">
+      <div class="form-control col-md-6">
         <label for="state">Select State</label>
-        <select id="state" class="form-control">
+        <select id="state">
           <option selected>Choose...</option>
           <option>Oregon</option>
           <option>New York</option>
@@ -63,18 +65,18 @@
           <option>Idaho</option>
         </select>
       </div>
-      <div class="form-control col-md-10">
+      <div class="form-control col-md-6">
         <label for="zip">Enter Zip</label>
-        <input type="text" id="zip" class="form-control">
+        <input type="text" id="zip">
       </div>
-    </div>
-    <button type="submit" class="btn btn-primary">Go on to payment</button>
+    </div>  
+    <button type="submit" class="m-2">Go on to payment</button>
   </form>
 
   <form id="payment" class="hidden">
+    <p id="payment-error" class="hidden">Please enter payment information.</p>
     <div class="form-row">
       <div class="col-50">
-        <label for="fname">Accepted Caeds</label>
         <div class="icon-container">
           <i class="fa fa-cc-visa"></i>
           <i class="fa fa-cc-amex"></i>
@@ -91,11 +93,11 @@
       <input type="text" id="expyear" name="expyear">
       <label for="cvv">CVV</label>
       <input type="text" id="cvv" name="cvv">
-      <button type="submit" class="btn btn-primary">Complete Purchase</button>
+      <button type="submit">Complete Purchase</button>
     </div>
   </form>
 
-  <div id="cart" class="hidden">
+  <div id="recipe" class="hidden">
     <h1>Items and total amount</h1>
     <p>
       <span id="price">______________</span> with a 25% off discount bringing your total to <span id="price-minus-25%">_________</span>
