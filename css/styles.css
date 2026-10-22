@@ -5,3 +5,15 @@
 p {
   margin-left: 5px;
 }
+
+.jumbotron {
+  background-color: black;
+}
+
+h1 {
+  color: aqua;
+}
+
+body {
+  background-color: gold;
+}
