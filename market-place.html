@@ -18,15 +18,15 @@
     <div class="row">
       <div class="col-sm-12">
         <label for="necklace">Necklace: 120.99</label>
-        <input type="radio" name="jewelry" id="necklace" value="120.99">
+        <input type="radio" name="jewelry" id="necklace" value="120.99" required>
       </div>
       <div class="col-sm-12">
         <label for="bracelet">Bracelet: 100.99</label>
-        <input type="radio" name="jewelry" id="bracelet" value="100.99">
+        <input type="radio" name="jewelry" id="bracelet" value="100.99" required>
       </div>
       <div class="col-sm-12">
         <label for="earrings">Earrings: 50.99 each</label>
-        <input type="radio" name="jewelry" id="earrings" value="50.99">
+        <input type="radio" name="jewelry" id="earrings" value="50.99" required>
       </div>
     </div>
     <button type="submit">Add to cart</button>
@@ -98,9 +98,9 @@
   </form>
 
   <div id="recipe" class="hidden">
-    <h1>Items and total amount</h1>
+    <h1>Total amount</h1>
     <p>
-      <span id="price">______________</span> with a 25% off discount bringing your total to <span id="price-minus-25%">_________</span>
+      <span id="price">______________</span> with a 25% off discount bringing your total to <span id="price-minus-25">_________</span>
     </p>
   </div>
 </body>  

@@ -5,29 +5,26 @@ function hideErrorMessage() {
 }
 
 function neckLace(price) {
-  return price === 120.99;
+  return price = 120.99;
 }
 
 function bracelet(price) {
-  return price === 100.99;
+  return price = 100.99;
 }
 
 function earRings(price) {
-  return price === 50.99;
-}
-
-function discount(price) {
-  return price * 25;
+  return price = 50.99;
 }
 
 window.addEventListener("load", function() {
   const form = document.querySelector("#items");
   const form2 = document.querySelector("#shipping");
   const form3 = document.querySelector("#payment");
+  let jewelry;
   form.addEventListener("submit", function(event) {
     event.preventDefault();
     hideErrorMessage();
-    const jewelry = document.querySelector('input[name="jewelry"]:checked').value;
+   jewelry = document.querySelector('input[name="jewelry"]:checked').value;
 
     if (jewelry === "120.99") {
       document.querySelector("span#price").innerText = neckLace(price);
@@ -35,11 +32,9 @@ window.addEventListener("load", function() {
       document.querySelector("span#price").innerText = bracelet(price);
     } else if (jewelry === "50.99") {
       document.querySelector("span#price").innerText = earRings(price);
-    } else {
-      document.getElementById("item-error").removeAttribute("class")
-    }
-
-    document.querySelector("span#price-minus-25%").innerText = jewelry - discount(price)
+    }// else {
+    //   document.getElementById("item-error").removeAttribute("class")
+    // }
   });
 
   form.addEventListener("submit", function() {
@@ -56,11 +51,11 @@ window.addEventListener("load", function() {
     const state = document.querySelector("select#state").value;
     const zip = document.querySelector("input#zip").value;
 
-    if (name && address && email && city && state && zip) {
+    // if (name && address && email && city && state && zip) {
       document.getElementById("payment").removeAttribute("class");
-    } else {
-      document.getElementById("shipping-error").removeAttribute("class");
-    }
+    // } else {
+    //   document.getElementById("shipping-error").removeAttribute("class");
+    // }
   });
 
   form3.addEventListener("submit", function(event) {
@@ -71,11 +66,23 @@ window.addEventListener("load", function() {
     const expMonth = document.querySelector("input#expmonth").value;
     const expYear = document.querySelector("input#expyear").value;
     const cvv = document.querySelector("input#cvv").value;
-
-    if (cname && ccnum && expMonth && expYear && cvv) {
+    let beforeDiscount = parseInt(jewelry);
+    let afterDiscount = beforeDiscount;
+    // if (cname && ccnum && expMonth && expYear && cvv) {
       document.getElementById("recipe").removeAttribute("class");
-    } else {
-      document.getElementById("payment-error").removeAttribute("class");
+    // } else {
+    //   document.getElementById("payment-error").removeAttribute("class");
+    // }
+
+    if (beforeDiscount >= neckLace(price)) {
+      afterDiscount = beforeDiscount * 0.25; 
+    } else if (beforeDiscount >= bracelet(price)) {
+      afterDiscount = beforeDiscount * 0.25;
+    } else if (beforeDiscount >= earRings(price)) {
+      afterDiscount = beforeDiscount * 0.25;
     }
+
+    document.querySelector("#price-minus-25").innerHTML =
+    `with a suprise discount ${afterDiscount} was ${beforeDiscount}`; 
   });
 });
