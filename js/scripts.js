@@ -32,9 +32,7 @@ window.addEventListener("load", function() {
       document.querySelector("span#price").innerText = bracelet(price);
     } else if (jewelry === "50.99") {
       document.querySelector("span#price").innerText = earRings(price);
-    }// else {
-    //   document.getElementById("item-error").removeAttribute("class")
-    // }
+    }
   });
 
   form.addEventListener("submit", function() {
@@ -51,11 +49,11 @@ window.addEventListener("load", function() {
     const state = document.querySelector("select#state").value;
     const zip = document.querySelector("input#zip").value;
 
-    // if (name && address && email && city && state && zip) {
+    if (name && address && email && city && state && zip) {
       document.getElementById("payment").removeAttribute("class");
-    // } else {
-    //   document.getElementById("shipping-error").removeAttribute("class");
-    // }
+    } else {
+      document.getElementById("shipping-error").removeAttribute("class");
+    }
   });
 
   form3.addEventListener("submit", function(event) {
@@ -68,11 +66,11 @@ window.addEventListener("load", function() {
     const cvv = document.querySelector("input#cvv").value;
     let beforeDiscount = parseInt(jewelry);
     let afterDiscount = beforeDiscount;
-    // if (cname && ccnum && expMonth && expYear && cvv) {
+    if (cname && ccnum && expMonth && expYear && cvv) {
       document.getElementById("recipe").removeAttribute("class");
-    // } else {
-    //   document.getElementById("payment-error").removeAttribute("class");
-    // }
+    } else {
+      document.getElementById("payment-error").removeAttribute("class");
+    }
 
     if (beforeDiscount >= neckLace(price)) {
       afterDiscount = beforeDiscount * 0.25; 
